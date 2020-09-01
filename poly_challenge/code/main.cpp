@@ -4,7 +4,7 @@
 #include <vector>
 #include "Account.h"
 #include "Savings_Account.h"
-//#include "Checking_Account.h"
+#include "Checking_Account.h"
 //#include "Trust_Account.h"
 #include "Account_Util.h"
 
@@ -42,22 +42,54 @@ int main() {
     Account* s3 = new Savings_Account{ "Batman",2000 };
     Account* s4 = new Savings_Account{ "Wonderwoman", 5000, 5.0 };
     std::vector<Account *> sav_accounts{ s1,s2,s3,s4 };
-   
+
+    Account* c1 = new Checking_Account{};
+    Account* c2 = new Checking_Account{ "Supermanc" };
+    Account* c3 = new Checking_Account{ "Batmanc",2000 };
+    Account* c4 = new Checking_Account{ "Wonderwomanc", 5000 };
+    std::vector<Account*> che_accounts{ c1,c2,c3,c4 };
+ 
+    Account* t1 = new Trust_Account{};
+    Account* t2 = new Trust_Account{ "Athos", 10000, 5.0 };
+    Account* t3 = new Trust_Account{ "Porthos", 20000, 4.0 };
+    Account* t4 = new Trust_Account{ "Aramis", 30000 };
+    std::vector<Account*> trust_accounts{ t1,t2,t3,t4 };
+
     for (const auto sav_acc : sav_accounts)
     {
         std::cout << *sav_acc << std::endl;
     }
 
-    //for (const auto sav_acc : sav_accounts)
-    //{
-    //    
-    //}
+    for (const auto che_acc : che_accounts)
+    {
+        std::cout << *che_acc << std::endl;
+    }
+
+    for (const auto t_acc : trust_accounts)
+    {
+        std::cout << *t_acc << std::endl;
+    }
     display(sav_accounts);
     deposit(sav_accounts, 1000);
     deposit(s1, 100000);
-    /*display(sav_accounts);
-    deposit(sav_accounts, 1000);
-    withdraw(sav_accounts, 2000);*/
+    withdraw(sav_accounts, 2000);
+    withdraw(s2, 2000);
+    withdraw(s1, 2000);
+
+    display(che_accounts);
+    deposit(che_accounts, 1000);
+    deposit(c1, 100000);
+    withdraw(che_accounts, 2000);
+    withdraw(c2, 2000);
+    withdraw(c1, 2000);
+
+    display(trust_accounts);
+    deposit(trust_accounts, 1000);
+    deposit(t1, 100000);
+    withdraw(trust_accounts, 2000);
+    withdraw(t2, 2000);
+    withdraw(t1, 2000);
+
 
 
 
@@ -102,15 +134,15 @@ int main() {
     delete s3;
     delete s4;
 
-    //delete c1;
-    //delete c2;
-    //delete c3;
-    //delete c4;
+    delete c1;
+    delete c2;
+    delete c3;
+    delete c4;
 
-    //delete t1;
-    //delete t2;
-    //delete t3;
-    //delete t4;
+    delete t1;
+    delete t2;
+    delete t3;
+    delete t4;
     return 0;
 }
 

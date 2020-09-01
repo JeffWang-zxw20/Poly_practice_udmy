@@ -1,8 +1,19 @@
 #include "Trust_Account.h"
 
 Trust_Account::Trust_Account(std::string name, double balance, double int_rate)
-    : Savings_Account {name, balance, int_rate}, num_withdrawals {0}  {
-        
+    : Savings_Account {name, balance, int_rate}, num_withdrawals {0}  {  
+}
+
+void Trust_Account::print(std::ostream& os) const //why add override will cause error?
+{
+    //display(const std::vector<Account*> & accounts)
+    os << name << "'s Trust account. Balance now is: "
+        << balance
+        <<" "
+        <<"num_withdrawal is : "
+        <<num_withdrawals 
+        <<" "
+        <<std::endl; //possible bug to add endlS
 }
 
 // Deposit additional $50 bonus when amount >= $5000
@@ -22,8 +33,3 @@ bool Trust_Account::withdraw(double amount) {
     }
 }
 
-std::ostream &operator<<(std::ostream &os, const Trust_Account &account) {
-    os << "[Trust Account: " << account.name << ": " << account.balance << ", " << account.int_rate 
-        << "%, withdrawals: " << account.num_withdrawals <<  "]";
-    return os;
-}

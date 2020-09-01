@@ -142,9 +142,11 @@
   <ItemGroup>
     <ClCompile Include="..\..\code\Account.cpp" />
     <ClCompile Include="..\..\code\Account_Util.cpp" />
+    <ClCompile Include="..\..\code\Checking_Account.cpp" />
     <ClCompile Include="..\..\code\Interface.cpp" />
     <ClCompile Include="..\..\code\main.cpp" />
     <ClCompile Include="..\..\code\Savings_Account.cpp" />
+    <ClCompile Include="..\..\code\Trust_Account.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\code\Description.txt" />
@@ -152,8 +154,10 @@
   <ItemGroup>
     <ClInclude Include="..\..\code\Account.h" />
     <ClInclude Include="..\..\code\Account_Util.h" />
+    <ClInclude Include="..\..\code\Checking_Account.h" />
     <ClInclude Include="..\..\code\Interface.h" />
     <ClInclude Include="..\..\code\Savings_Account.h" />
+    <ClInclude Include="..\..\code\Trust_Account.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

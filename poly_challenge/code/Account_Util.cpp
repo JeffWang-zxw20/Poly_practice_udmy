@@ -33,14 +33,25 @@ void deposit(Account* &acc_pointer_address, double amount)
 
 // Withdraw amount from each Account object in the vector
 void withdraw(std::vector<Account*> &accounts, double amount) {
-    //std::cout << "\n=== Withdrawing from Accounts ==============================" <<std::endl;
-    //for (auto &acc:accounts)  {
-    //    if (acc.withdraw(amount)) 
-    //        std::cout << "Withdrew " << amount << " from " << acc << std::endl;
-    //    else
-    //        std::cout << "Failed Withdrawal of " << amount << " from " << acc << std::endl;
-    //} 
+    std::cout << "\n=== Withdrawing from Accounts ==============================" <<std::endl;
+    for (auto &acc:accounts)  {
+        if (acc->withdraw(amount)) 
+            std::cout << "Withdrew " << amount << " from " << *acc << std::endl;
+        else
+            std::cout << "Failed Withdrawal of " << amount << " from " << *acc << std::endl;
+    } 
 }
+
+// Withdraw amount from one Account object in the vector
+void withdraw(Account* &acc, double amount) {
+    std::cout << "\n=== Withdrawing from one Accounts ==============================" << std::endl;
+
+        if (acc->withdraw(amount))
+            std::cout << "Indiviual Withdrew " << amount << " from " << *acc << std::endl;
+        else
+            std::cout << "Failed Withdrawal of " << amount << " from " << *acc << std::endl;
+    }
+
 
 // Helper functions for Savings Account class
 /*

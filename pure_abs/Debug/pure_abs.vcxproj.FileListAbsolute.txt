@@ -1,0 +1,2 @@
+C:\CPP\visual_st\Section16\pure_abs\Debug\pure_abs.exe
+C:\CPP\visual_st\Section16\pure_abs\Debug\pure_abs.pdb
